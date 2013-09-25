@@ -1,0 +1,18 @@
+<h1>Welcome to Sinatra!</h1>
+
+<p><a href='/login'>Login</a></p>
+
+<% if @post_comment_count %>
+<ul>
+  <% @post_comment_count.each do |hash| %>
+  <a href="/post/<%=hash[:id]%>"><li>
+    <%=hash[:post] %>
+  </li></a>
+  <ul>
+    <li>
+      <%= hash[:comment_count] %>
+    </li>
+  </ul>
+  <% end%>
+</ul>
+<% end %>

@@ -1,0 +1,25 @@
+<h1>Sup? <%= @user.email %></h1>
+
+<p><a href='/newpost'>Post New</a></p>
+
+<% @user.posts.any? %>
+<ul>
+ <% @user.posts.each do |post| %>
+  <li>
+    <a href="<%=post.source %>"><%= post.post_title %></a>
+  </li>
+<ul>
+  <% post.comments.each do |comment|%>
+  <li>
+    <%=comment.comment_title %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+</ul>
+
+<p><a href='/'>Home</a></p>
+
+
+
+

@@ -1,0 +1,11 @@
+<a href="<%=@post.source%>"><h1><%= @post.post_title %></h1></a>
+
+<% if @post.comments %>
+<ul>
+  <% @post.comments.each do |comment| %>
+  <li>
+    <%= comment.comment_title %>
+  </li>
+<% end %>
+</ul>
+<% end %>
